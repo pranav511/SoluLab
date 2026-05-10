@@ -1,0 +1,114 @@
+{
+  "info": {
+    "_postman_id": "cb95cdca-abce-4130-82d5-e266573011ce",
+    "name": "SoluLab",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "32191845"
+  },
+  "item": [
+    {
+      "name": "Create Payment",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "idempotency-key",
+            "value": "abc123",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"amount\": 1000\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/payments",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "payments"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Process Payment",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/payments/878fa121-51f2-42c7-9bf0-1f5f2ea068c5/process",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "payments",
+            "878fa121-51f2-42c7-9bf0-1f5f2ea068c5",
+            "process"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Payment",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/payments/878fa121-51f2-42c7-9bf0-1f5f2ea068c5",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "payments",
+            "878fa121-51f2-42c7-9bf0-1f5f2ea068c5"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Webhook",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"payment_id\": \"878fa121-51f2-42c7-9bf0-1f5f2ea068c5\",\r\n  \"status\": \"SUCCESS\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/payments/webhook",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "payments",
+            "webhook"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

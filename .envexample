@@ -2,5 +2,5 @@ PORT=3000
 
 DB_HOST=localhost
 DB_USER=root
-DB_PASSWORD=root
-DB_NAME=payment_system
+DB_PASSWORD=password
+DB_NAME=SoluLab
